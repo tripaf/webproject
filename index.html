@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/kursor"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <script src="https://kit.fontawesome.com/bc096fe0f2.js" crossorigin="anonymous"></script>
+    <title>10.i</title>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="LOGO.png" class="logo">
+            <ul>
+                <li><a href="#header">Kezdőlap</a></li>
+                <li><a href="#ofo">Osztályfőnök</a></li>
+                <li><a href="#iskola">Iskolánk</a></li>
+                <li><a href="#portfolio">Képek</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>PG</p>
+            <h1>10.i <span>Osztály</span></h1>
+        </div>
+    </div>
+</div>
+<!--------Osztalyfonok-------->
+<div id="ofo">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="ofo.png" >
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">
+                    Osztály<span>főnök</span>
+                </h1>
+                <p class="info">Kiss Gábor tapasztalt és köztiszteletben álló tanár iskolánkban.<br> Szenvedélye, hogy segítse a fiatalokat teljes potenciáljuk kibontakoztatásában, és elkötelezett amellett, hogy erős alapot biztosítson a tanuláshoz. Egyedülálló megközelítésével kihívja és bevonja diákjait az osztályterembe, miközben arra ösztönzi őket, hogy törekedjenek a kiválóságra.😍</p>
+
+            
+
+            </div>
+        </div>
+    </div>
+</div>
+<!------ISKOLA------->
+
+<div class="iskola">
+    <div class="container">
+        <h1 class="sub-title">Iskolánk elérhetőségei</h1>
+        <div class="iskola-social">
+            <div>
+                <i class="fa-brands fa-instagram"></i>
+                <h2>Instagram</h2>
+                <p>Itt található meg az Iskolánk hivatalos Instagram oldala!</p>
+                <a href="https://www.instagram.com/pg_kiskunfelegyhaza/">Tudj meg többet</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-facebook"></i>
+                <h2>Facebook</h2>
+                <p>Itt található meg az Iskolánk hivatalos Facebook oldala!</p>
+                <a href="https://www.facebook.com/people/Kiskunf%C3%A9legyh%C3%A1zi-Szent-Benedek-PG-K%C3%A9t-Tan%C3%ADt%C3%A1si-Nyelv%C5%B1-Technikum-%C3%A9s-Koll/100032786691974/">Tudj meg többet</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-youtube"></i>
+                <h2>Youtube</h2>
+                <p>Itt található meg az Iskolánk hivatalos Youtube oldala!</p>
+                <a href="https://www.youtube.com/channel/UCsHOTZXcaLiIPJ_sXhJW0zA/">Tudj meg többet</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------KEPEK--------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Komoly arcok</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="kep1.jpeg">
+                <div class="layer">
+                    <h3>Arpigamer17</h3>
+                    <p>Asszonyverő</p>
+
+                </div>
+            </div>
+            <div class="work">
+                <img src="kep2.jpeg">
+                <div class="layer">
+                    <h3>Czako</h3>
+                    <p>Komoly forma, ragadozó</p>
+
+                </div>
+            </div>
+            <div class="work">
+                <img src="kep3.jpeg">
+                <div class="layer">
+                    <h3>Kocsis</h3>
+                    <p>mentálisan és testileg is kiegyensúlyozatlan életbeli mentalista. Starbucks a kedvenc helye!</p>
+
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">🔼Ugrás fel!🔼</a>
+    </div>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+<script src="https://unpkg.com/kursor"></script>
+    <script>
+        new kursor({
+            type: 1
+        //  color: #fff
+        })
+    </script>
+
+</html>
